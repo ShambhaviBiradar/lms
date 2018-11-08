@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <script src='https://content.jwplatform.com/libraries/7ohghkTm.js'></script>
+    <script>jwplayer.key='YOUR_KEY';</script>
+</head>
+<body>
+  <div class="container">
+  <!-- Grid row -->
+<div class="row">
+
+
+<div id="player">Loading the player...</div>
+</div>
+</div>
+
+    <script>
+        // Setup the player
+        const player = jwplayer('player').setup({
+            file: 'http://techslides.com/demos/sample-videos/small.mp4'
+        });
+
+        // Listen to an event
+        player.on('pause', (event) => {
+            alert('Why did my user pause their video instead of watching it?');
+        });
+
+        // Call the API
+        const bumpIt = () => {
+            const vol = player.getVolume();
+            player.setVolume(vol + 10);
+        }
+        bumpIt();
+    </script>
+</body>
+</html>
