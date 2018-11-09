@@ -30,11 +30,16 @@
             alert('Why did my user pause their video instead of watching it?');
         });
 
+        player.on('complete', (event) => {
+            alert('Video completely watched!');
+        });
+
         // Call the API
         const bumpIt = () => {
             const vol = player.getVolume();
             player.setVolume(vol + 10);
         }
+
         bumpIt();
     </script>
 </body>
