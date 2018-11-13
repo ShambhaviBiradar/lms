@@ -20,3 +20,5 @@ urlpatterns = [
     path('app/', include('course_app.urls')),
     path('admin/', admin.site.urls),
 ]
+
+admin.site.site_header = 'Learning Management System'
