@@ -2,7 +2,7 @@
 
 from django.contrib import admin
 
-from . models import Course, Video
+from . models import Course, Video, Question
 
 ''' CourseAdmin '''
 class CourseAdmin(admin.ModelAdmin):
@@ -21,6 +21,10 @@ class VideoAdmin(admin.ModelAdmin):
         'video_name',
         'created_at'
     ]
+
+class QuestionAdmin(admin.ModelAdmin):
+    pass
+
 
 admin.site.register(Course, CourseAdmin)
 admin.site.register(Video, VideoAdmin)
